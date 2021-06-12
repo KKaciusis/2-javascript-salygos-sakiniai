@@ -12,7 +12,7 @@ document.getElementById('calculateBtn').addEventListener('click', () => {
     let squareRoot = Math.sqrt(poweredNumber - multipliedAC);
     let equationBottom = (2 * a1);
 
-    if (isNaN(kvadratinesaknis)) {
+    if (isNaN(squareRoot)) {
         result.innerHTML = 'GO PEKLAN';
     } else {
         let x1 = (-b1 - squareRoot) / equationBottom;
