@@ -1,18 +1,24 @@
 "use strict"
 
-let skaicius = 345
-let skaitmuo = Math.log(skaicius) * Math.LOG10E + 1 | 0;
+document.getElementById('calcBtn').addEventListener('click', () => {
+    let num = document.getElementById('3digitNum').value;
+    const ALLOWED_INPUT_LENGTH = 3;
 
-let suma, vidurkis, sandauga;
+    if (ALLOWED_INPUT_LENGTH !== num.length) {
+        number.innerHTML = "Please input " + ALLOWED_INPUT_LENGTH + " digit number";
+    } else {
+        number.innerHTML = 'Number:  ' + num;
 
-if (3 === skaitmuo) {
-    suma = 3 + 4 + 5;
-    vidurkis = suma / 3;
-    sandauga = 3 * 4 * 5;
-}
+        let NumDigits = num.length
+        numberDigits.innerHTML = 'Digits: ' + NumDigits;
 
-console.log("skaicius", skaicius)
-console.log("skaitmuo", skaitmuo)
-console.log("suma", suma)
-console.log("vidurkis", vidurkis)
-console.log("sandauga", sandauga)
+        let NumDigitSum = parseInt(num[0]) + parseInt(num[1]) + parseInt(num[2]);
+        numberDigitSum.innerHTML = 'Number Digits summed : ' + NumDigitSum;
+
+        let NumDigitAv = parseInt(num[0]) + parseInt(num[1]) + parseInt(num[2]) / 2;
+        numberDigitAverage.innerHTML = 'Number Digit Average : ' + NumDigitAv;
+
+        let NumDigitMult = parseInt(num[0]) * parseInt(num[1]) * parseInt(num[2]);
+        numberDigitMultiplied.innerHTML = 'Number Digits Multiplied : ' + NumDigitMult;
+    }
+});
